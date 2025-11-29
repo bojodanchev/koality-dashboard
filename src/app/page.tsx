@@ -88,7 +88,7 @@ export default function Dashboard() {
     return {
       id: g.id,
       name: user?.name || 'Anonymous',
-      xp: g.totalXP || 0,
+      totalXP: g.totalXP || 0,
       level: g.level || 1,
       streak: g.streak || 0
     };
