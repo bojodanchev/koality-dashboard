@@ -4,7 +4,8 @@ import { BookA, Clock } from 'lucide-react';
 
 interface Word {
     id: string;
-    word: string;
+    word?: string;
+    example?: string;
     translation: string;
     addedAt: number;
     userId?: string;
@@ -30,7 +31,7 @@ export function RecentWords({ words }: RecentWordsProps) {
                     sortedWords.map((word) => (
                         <div key={word.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div>
-                                <p className="font-medium text-gray-900">{word.word}</p>
+                                <p className="font-medium text-gray-900">{word.word || word.example || 'Unknown Word'}</p>
                                 <p className="text-sm text-gray-500">{word.translation}</p>
                             </div>
                             <div className="flex items-center text-xs text-gray-400 gap-1">

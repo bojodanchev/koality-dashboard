@@ -18,7 +18,9 @@ export default function Dashboard() {
     dailyLessons: {},
     courses: {},
     lessons: {},
-    words: {}
+    courses: {},
+    lessons: {},
+    dictionaryWords: {}
   });
 
   if (isLoading) {
@@ -130,7 +132,7 @@ export default function Dashboard() {
         <div className="space-y-8">
           <Leaderboard users={leaderboardData as any} />
           <CourseCurriculum courses={data?.courses as any || []} lessons={data?.lessons as any || []} />
-          <RecentWords words={data?.words as any || []} />
+          <RecentWords words={data?.dictionaryWords as any || []} />
           <RecentActivity activities={recentActivity} />
         </div>
       </div>

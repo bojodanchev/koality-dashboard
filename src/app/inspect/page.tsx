@@ -12,6 +12,7 @@ export default function Home() {
         lessons: {},
         dictionary: {},
         words: {},
+        dictionaryWords: {},
         vocabulary: {},
         userWords: {}
     });
@@ -76,6 +77,9 @@ export default function Home() {
                     </pre>
                     <pre className="bg-gray-100 p-4 rounded overflow-auto max-h-60">
                         UserWords: {JSON.stringify(data?.userWords, null, 2)}
+                    </pre>
+                    <pre className="bg-gray-100 p-4 rounded overflow-auto max-h-60">
+                        DictionaryWords: {JSON.stringify(data?.dictionaryWords, null, 2)}
                     </pre>
                 </div>
             </section>
