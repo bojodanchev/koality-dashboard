@@ -13,6 +13,8 @@ export default function Home() {
         dictionary: {},
         words: {},
         dictionaryWords: {},
+        DictionaryWords: {},
+        dictionary_words: {},
         vocabulary: {},
         userWords: {}
     });
@@ -80,6 +82,12 @@ export default function Home() {
                     </pre>
                     <pre className="bg-gray-100 p-4 rounded overflow-auto max-h-60">
                         DictionaryWords: {JSON.stringify(data?.dictionaryWords, null, 2)}
+                    </pre>
+                    <pre className="bg-gray-100 p-4 rounded overflow-auto max-h-60">
+                        DictionaryWords (Cap): {JSON.stringify(data?.DictionaryWords, null, 2)}
+                    </pre>
+                    <pre className="bg-gray-100 p-4 rounded overflow-auto max-h-60">
+                        dictionary_words: {JSON.stringify(data?.dictionary_words, null, 2)}
                     </pre>
                 </div>
             </section>

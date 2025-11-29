@@ -18,8 +18,6 @@ export default function Dashboard() {
     dailyLessons: {},
     courses: {},
     lessons: {},
-    courses: {},
-    lessons: {},
     dictionaryWords: {}
   });
 
