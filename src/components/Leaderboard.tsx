@@ -3,7 +3,7 @@ import { Trophy, Medal } from 'lucide-react';
 interface LeaderboardUser {
     id: string;
     name: string;
-    xp: number;
+    totalXP: number;
     level: number;
     streak: number;
 }
@@ -13,7 +13,7 @@ interface LeaderboardProps {
 }
 
 export function Leaderboard({ users }: LeaderboardProps) {
-    const sortedUsers = [...users].sort((a, b) => b.xp - a.xp).slice(0, 5);
+    const sortedUsers = [...users].sort((a, b) => (b.totalXP || 0) - (a.totalXP || 0)).slice(0, 5);
 
     return (
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
@@ -35,11 +35,15 @@ export function Leaderboard({ users }: LeaderboardProps) {
                             </div>
                             <div>
                                 <p className="font-medium text-gray-900">{user.name}</p>
-                                <p className="text-xs text-gray-500">Level {user.level} • {user.streak} day streak</p>
+                                <p className="text-xs text-gray-500">
+                                    <span className="font-semibold text-gray-900">{user.totalXP}</span>
+                                    <span className="text-xs text-gray-500 ml-1">XP</span>
+                                    <span className="ml-2">Level {user.level} • {user.streak} day streak</span>
+                                </p>
                             </div>
                         </div>
                         <div className="text-right">
-                            <p className="font-bold text-gray-900">{user.xp.toLocaleString()}</p>
+                            <p className="font-bold text-gray-900">{user.totalXP.toLocaleString()}</p>
                             <p className="text-xs text-gray-500">XP</p>
                         </div>
                     </div>

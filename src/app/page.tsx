@@ -7,6 +7,7 @@ import { RecentActivity } from '@/components/RecentActivity';
 import { EngagementChart } from '@/components/EngagementChart';
 import { Leaderboard } from '@/components/Leaderboard';
 import { CourseCurriculum } from '@/components/CourseCurriculum';
+import { RecentWords } from '@/components/RecentWords';
 import { Users, GraduationCap, Globe, TrendingUp, BookOpen, Trophy } from 'lucide-react';
 
 export default function Dashboard() {
@@ -16,7 +17,8 @@ export default function Dashboard() {
     gamification: {},
     dailyLessons: {},
     courses: {},
-    lessons: {}
+    lessons: {},
+    words: {}
   });
 
   if (isLoading) {
@@ -113,11 +115,6 @@ export default function Dashboard() {
           icon={GraduationCap}
         />
         <StatCard
-          title="Total XP Earned"
-          value={totalXP.toLocaleString()}
-          icon={Trophy}
-        />
-        <StatCard
           title="Lessons Today"
           value={lessonsToday}
           icon={BookOpen}
@@ -133,6 +130,7 @@ export default function Dashboard() {
         <div className="space-y-8">
           <Leaderboard users={leaderboardData as any} />
           <CourseCurriculum courses={data?.courses as any || []} lessons={data?.lessons as any || []} />
+          <RecentWords words={data?.words as any || []} />
           <RecentActivity activities={recentActivity} />
         </div>
       </div>
