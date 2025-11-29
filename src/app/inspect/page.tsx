@@ -9,7 +9,11 @@ export default function Home() {
         dailyLessons: {},
         lessonProgress: {},
         courses: {},
-        lessons: {}
+        lessons: {},
+        dictionary: {},
+        words: {},
+        vocabulary: {},
+        userWords: {}
     });
 
     if (isLoading) return <div>Loading...</div>;
@@ -57,6 +61,23 @@ export default function Home() {
                 <pre className="bg-gray-100 p-4 rounded overflow-auto max-h-60">
                     {JSON.stringify(data?.lessons, null, 2)}
                 </pre>
+            </section>
+            <section>
+                <h2 className="text-xl font-semibold">Dictionary / Words</h2>
+                <div className="grid grid-cols-2 gap-4">
+                    <pre className="bg-gray-100 p-4 rounded overflow-auto max-h-60">
+                        Dictionary: {JSON.stringify(data?.dictionary, null, 2)}
+                    </pre>
+                    <pre className="bg-gray-100 p-4 rounded overflow-auto max-h-60">
+                        Words: {JSON.stringify(data?.words, null, 2)}
+                    </pre>
+                    <pre className="bg-gray-100 p-4 rounded overflow-auto max-h-60">
+                        Vocabulary: {JSON.stringify(data?.vocabulary, null, 2)}
+                    </pre>
+                    <pre className="bg-gray-100 p-4 rounded overflow-auto max-h-60">
+                        UserWords: {JSON.stringify(data?.userWords, null, 2)}
+                    </pre>
+                </div>
             </section>
         </div>
     );
