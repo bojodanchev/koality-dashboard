@@ -31,7 +31,7 @@ export function EngagementChart({ data }: EngagementChartProps) {
     return (
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
             <h3 className="text-lg font-semibold mb-6 text-gray-900">Weekly Engagement</h3>
-            <div className="h-[300px] w-full">
+            <div className="h-[300px] w-full min-h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={chartData}>
                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
