@@ -108,11 +108,13 @@ export default function Dashboard() {
           value={totalUsers}
           icon={Users}
           trend="+12%"
+          href="/users"
         />
         <StatCard
           title="Active Students"
           value={students}
           icon={GraduationCap}
+          href="/users?type=student"
         />
         <StatCard
           title="Lessons Today"

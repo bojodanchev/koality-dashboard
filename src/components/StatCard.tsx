@@ -1,15 +1,17 @@
 import { LucideIcon } from 'lucide-react';
+import Link from 'next/link';
 
 interface StatCardProps {
     title: string;
     value: string | number;
     icon: LucideIcon;
     trend?: string;
+    href?: string;
 }
 
-export function StatCard({ title, value, icon: Icon, trend }: StatCardProps) {
-    return (
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+export function StatCard({ title, value, icon: Icon, trend, href }: StatCardProps) {
+    const content = (
+        <>
             <div className="flex items-center justify-between">
                 <div>
                     <p className="text-sm font-medium text-gray-500">{title}</p>
@@ -25,6 +27,23 @@ export function StatCard({ title, value, icon: Icon, trend }: StatCardProps) {
                     <span className="text-gray-500 ml-2">vs last month</span>
                 </div>
             )}
+        </>
+    );
+
+    if (href) {
+        return (
+            <Link
+                href={href}
+                className="block bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all cursor-pointer"
+            >
+                {content}
+            </Link>
+        );
+    }
+
+    return (
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            {content}
         </div>
     );
 }
